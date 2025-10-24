@@ -16,8 +16,11 @@
 
 </head>
 
-<body class="content-center flex p-20 flex-col gap-10 w-100% items-center text-center">
-    <h1 class="text-red-500">Johnson County Community College Class Formatter</h1>
+<body class="content-center flex p-20 flex-col gap-10 w-100% items-center text-center bg-red-50">
+    <h1 class="text-purple-400">Blue's JCCC Class CSV Formatter</h1>
+    <div>
+      <p class="italic text-sm">This website is not affiliated with nor endorsed by Johnson County Community College </p>
+    </div>
     <div>
       <a href="" id="bookmarklet" class="underline text-blue-500">Class Grabber Bookmarklet</a>
     </div>
@@ -32,8 +35,7 @@
       <input type="checkbox" id="groupedCheckbox" name="groupedCheckbox" class="">
       <label for="groupedCheckbox">Group by instructor</label>
     </div>
-    <div id="content" class="w-20">
-      <svg id="previewSVG"></svg>
+    <div id="content" class="border-4 border-red-400 border-solid overflow-scroll h-300 invisible">
     </div>
   <script
     src="./js/script.js"

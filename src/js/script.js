@@ -12,9 +12,11 @@
         // append svg text
         contentDiv.innerHTML = svg;
 
+        contentDiv.className = contentDiv.className.replace("invisible", "")
+
         const svgElem = contentDiv.firstElementChild;
-        const width = Number.parseFloat(svgElem.getAttribute('width')) /2;
-        const height = Number.parseFloat(svgElem.getAttribute('height')) /2;
+        const width = Number.parseFloat(svgElem.getAttribute('width'));
+        const height = Number.parseFloat(svgElem.getAttribute('height'));
         const cw = document.body.clientWidth - 200;
         svgElem.setAttribute('width', cw);
         svgElem.setAttribute('height', (height * cw) / width);
@@ -91,6 +93,8 @@ async function processFiles(){
  }
 
  preview_button.addEventListener("click", previewFile);
+
+ groupedCheckbox.addEventListener("change", previewFile);
 
  document.getElementById("bookmarklet").href = bookmarkletLink();
 
