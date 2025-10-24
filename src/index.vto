@@ -5,46 +5,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Class CSV to PDF</title>
-  <!-- Loads the full bundle or the lite version from jsdelivr -->
-  <!-- src="https://cdn.jsdelivr.net/npm/@myriaddreamin/typst-all-in-one.ts@0.6.1-rc3/dist/esm/index.js" -->
   <script type="module"
     src="https://cdn.jsdelivr.net/npm/@myriaddreamin/typst.ts/dist/esm/contrib/all-in-one-lite.bundle.js"
     id="typst"></script>
-<link
-  href="https://unpkg.com/normalize.css@8.0.1/normalize.css"
-  rel="stylesheet"
-/>
- <link rel="stylesheet" href="/style.css">
+  <link
+    href="https://unpkg.com/normalize.css@8.0.1/normalize.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/style.css">
 
 </head>
 
-  <body >
-    <div class="content-center flex p-40 flex-col gap-10">
+<body class="content-center flex p-20 flex-col gap-10 w-100% items-center text-center">
     <h1 class="text-red-500">Johnson County Community College Class Formatter</h1>
- <!-- Provides a button to export to PDF after finish editing -->
-  <!-- Accepts user input using a text area element -->
     <div>
-      <a href="" id="bookmarklet" class="underline text-blue-500">Class Grabber Bookmarklet</a></div>
-  <div class="flex">
-
-    <input type="file" id="file-input" class="p-2 rounded-full bg-red-200" multiple />
-  </div>
-  <div>
-    <button id="export" class="p-2 rounded-full bg-red-200">Export To PDF</button>
-    <button id="preview-button" class="p-2 rounded-full bg-red-200">preview</button>
-  </div>
-  <div>
-        
-    <input type="checkbox" id="groupedCheckbox" name="groupedCheckbox" class="">
-    <label for="groupedCheckbox">Group by instructor</label>
-  </div>
-
-  <div id="content" class="w-20"></div>
+      <a href="" id="bookmarklet" class="underline text-blue-500">Class Grabber Bookmarklet</a>
+    </div>
+    <div class="flex">
+      <input type="file" id="file-input" class="p-2 rounded-full bg-red-200 hover:bg-red-500" multiple />
+    </div>
+    <div  class="flex flex-row gap-10">
+      <button id="preview-button" class="p-2 rounded-full bg-red-200 hover:bg-red-500">preview</button>
+      <button id="export" class="p-2 rounded-full bg-red-200 hover:bg-red-500">Export To PDF</button>
+    </div>
+    <div>
+      <input type="checkbox" id="groupedCheckbox" name="groupedCheckbox" class="">
+      <label for="groupedCheckbox">Group by instructor</label>
+    </div>
+    <div id="content" class="w-20">
+      <svg id="previewSVG"></svg>
+    </div>
   <script
     src="./js/script.js"
     id="script"></script>
-  </div>
-  </body>
+ </body>
 
 
 </html>
