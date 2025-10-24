@@ -15,7 +15,7 @@
         const svgElem = contentDiv.firstElementChild;
         const width = Number.parseFloat(svgElem.getAttribute('width'));
         const height = Number.parseFloat(svgElem.getAttribute('height'));
-        const cw = document.body.clientWidth - 40;
+        const cw = document.body.clientWidth - 200;
         svgElem.setAttribute('width', cw);
         svgElem.setAttribute('height', (height * cw) / width);
       });

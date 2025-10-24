@@ -18,28 +18,32 @@
 
 </head>
 
-  <body>
-    <h1 class="text-red-100">Johnson County Community College Class Formatter</h1>
+  <body >
+    <div class="content-center flex p-40 flex-col gap-10">
+    <h1 class="text-red-500">Johnson County Community College Class Formatter</h1>
  <!-- Provides a button to export to PDF after finish editing -->
   <!-- Accepts user input using a text area element -->
     <div>
-      <a href="" id="bookmarklet">Class Grabber Bookmarklet</a></div>
-  <div>
+      <a href="" id="bookmarklet" class="underline text-blue-500">Class Grabber Bookmarklet</a></div>
+  <div class="flex">
 
-    <input type="file" id="file-input" multiple />
+    <input type="file" id="file-input" class="p-2 rounded-full bg-red-200" multiple />
+  </div>
+  <div>
+    <button id="export" class="p-2 rounded-full bg-red-200">Export To PDF</button>
     <button id="preview-button" class="p-2 rounded-full bg-red-200">preview</button>
-    <input type="checkbox" id="groupedCheckbox" name="groupedCheckbox">
+  </div>
+  <div>
+        
+    <input type="checkbox" id="groupedCheckbox" name="groupedCheckbox" class="">
     <label for="groupedCheckbox">Group by instructor</label>
   </div>
-  <div>
-    <button id="export" class="">Export To PDF</button>
-  </div>
-  <div id="content"></div>
 
+  <div id="content" class="w-20"></div>
   <script
     src="./js/script.js"
     id="script"></script>
-
+  </div>
   </body>
 
 
