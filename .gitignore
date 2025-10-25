@@ -1,3 +1,4 @@
 _site
 _cache
 .env
+src/bookmarklet/bookmarklet-minified.js

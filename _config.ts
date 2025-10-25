@@ -12,5 +12,6 @@ site.use(tailwindcss(/* Options */));
 site.add("/style.css")
 site.add("/templates/paper-classes.typ")
 site.add("/templates/grouped-paper-classes.typ")
+site.add("/src/bookmarklet/bookmarklet-minified.js")
 
 export default site;

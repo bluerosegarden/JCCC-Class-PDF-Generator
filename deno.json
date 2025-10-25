@@ -1,7 +1,8 @@
 {
   "imports": {
     "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.1.1/",
-    "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.12/jsx-runtime.ts"
+    "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.12/jsx-runtime.ts",
+    "terser": "npm:terser@^5.44.0"
   },
   "permissions": {
     "lume": {
@@ -31,7 +32,7 @@
   "tasks": {
     "lume": {
       "description": "Run Lume command",
-      "command": "deno run -P=lume lume/cli.ts"
+      "command": "deno task build-bookmarklet && deno run -P=lume lume/cli.ts"
     },
     "build": {
       "description": "Build the site for production",
@@ -40,6 +41,10 @@
     "serve": {
       "description": "Run and serve the site for development",
       "command": "deno task lume -s"
+    },
+    "build-bookmarklet": {
+      "description": "Builds the bookmarklet",
+      "command": "terser -e -o ./src/bookmarklet/bookmarklet-minified.js ./src/bookmarklet/bookmarklet-full.js "
     }
   },
   "compilerOptions": {
