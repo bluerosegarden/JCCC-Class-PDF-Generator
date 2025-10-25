@@ -8,34 +8,57 @@
   <script type="module"
     src="https://cdn.jsdelivr.net/npm/@myriaddreamin/typst.ts/dist/esm/contrib/all-in-one-lite.bundle.js"
     id="typst"></script>
-  <link
-    href="https://unpkg.com/normalize.css@8.0.1/normalize.css"
-    rel="stylesheet"
-  />
   <link rel="stylesheet" href="/style.css">
-
+<script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
 </head>
 
-<body class="content-center flex p-20 flex-col gap-10 w-100% items-center text-center bg-red-50">
-    <h1 class="text-purple-400">Blue's JCCC Class CSV Formatter</h1>
+<body class="content-center flex p-20 flex-col gap-5 w-100% items-center text-center bg-red-50 m-2">
+    <h1 class="text-purple-400 text-3xl">Blue's JCCC Class List Formatter</h1>
     <div>
+      <a href="https://github.com/bluerosegarden/Class-CSV-to-PDF-webapp" class="p-0 text-sm">
+        <iconify-icon icon="mdi:github" width="32" height="32" class="text-red-300 hover:text-red-500"></iconify-icon>
+      </a>
+    </div>
+    <div class="fixed bottom-0 w-full bg-red-50">
       <p class="italic text-sm">This website is not affiliated with nor endorsed by Johnson County Community College </p>
     </div>
     <div>
       <a href="" id="bookmarklet" class="underline text-blue-500">Class Grabber Bookmarklet</a>
     </div>
-    <div class="flex">
-      <input type="file" id="file-input" class="p-2 rounded-full bg-red-200 hover:bg-red-500" multiple />
+    <div class="flex flex-col items-center">
+      <label class="group peer" for="help-box">
+        <input type="checkbox" id="help-box" class="hidden" />
+        <p class="group-has-checked:hidden bg-blue-200 p-2 rounded italic hover:bg-blue-400 has-checked:bg-blue-400 has-checked:hover:bg-blue-200 peer text-sm">Confused? Click here!</p>
+        <p class="hidden group-has-checked:block bg-blue-200 p-2 rounded italic hover:bg-blue-400 has-checked:bg-blue-400 has-checked:hover:bg-blue-200 peer text-sm">Close!</p>
+      </label>
+      <div class="h-0 p-0 overflow-hidden peer-has-checked:h-fit peer-has-checked:p-5 text-left w-3/4 center">
+        <p class="py-4">This is a site to generate a PDF of Johnson County Community College classes using CSV files created by a special type of bookmark called a bookmarklet.</p>
+        <ol class="list-decimal">
+          <li class="py-1">First, either enable your bookmarks bar and drag the above Bookmarklet link into it, or right click copy the link and add it as the url for a new bookmark.</li>
+          <li class="py-1">Navigate to the <a target="_blank" href="https://reg-prod.ec.jccc.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search" class="underline text-blue-500">Credit Class Schedule Search<a/> page for JCCC</li>
+          <li class="py-1">Make a class search, and then click on the bookmarklet you just created. <span class="font-bold">Only classes on your current page will be saved. </span> You may need to run it for each page of the search results. </li>
+          <li class="py-1">Next, select as many of the the newly acquired CSV files below and hit the preview button.</li>
+          <li class="py-1">Once you're satisfied, hit export to PDF and save it!</li>
+        </ol>
+        <p class="py-4">If you have any questions, issues, anything please email me at <a href="mailto:mail@bluerose.garden" class="text-blue-500 underline">mail@bluerose.garden</a></p>
+      </div>
+    </div>
+
+    <div class="flex mt-20">
+      <input type="file" id="file-input" class="p-2 rounded bg-gray-100 hover:bg-red-500 border-solid border-2 border-gray-500" multiple />
     </div>
     <div  class="flex flex-row gap-10">
-      <button id="preview-button" class="p-2 rounded-full bg-red-200 hover:bg-red-500">preview</button>
-      <button id="export" class="p-2 rounded-full bg-red-200 hover:bg-red-500">Export To PDF</button>
+      <button id="preview-button" class="p-2 rounded-full bg-red-200 hover:bg-red-500">Preview</button>
+      <button id="export" class="p-2 rounded-full bg-red-200 hover:bg-red-500">Export PDF</button>
     </div>
     <div>
-      <input type="checkbox" id="groupedCheckbox" name="groupedCheckbox" class="">
-      <label for="groupedCheckbox">Group by instructor</label>
+      <label for="groupedCheckbox" class="group">
+        <input type="checkbox" id="groupedCheckbox" name="groupedCheckbox" class="hidden" />
+        <p class="group-has-checked:hidden bg-blue-200 p-4 rounded-full">Grouping by Class</p>
+        <p class="hidden group-has-checked:block bg-red-200 p-4 rounded-full">Grouping by Instructor</p>
+      </label>
     </div>
-    <div id="content" class="border-4 border-red-400 border-solid overflow-scroll h-300 invisible">
+    <div id="content" class="border-4 border-red-400 border-solid overflow-scroll h-300 invisible bg-white">
     </div>
   <script
     src="./js/script.js"
