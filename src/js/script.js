@@ -97,7 +97,6 @@ async function processFiles(){
 
  groupedCheckbox.addEventListener("change", previewFile);
 
- document.getElementById("bookmarklet").href = bookmarkletLink();
 
 
  async function formatTemplate(csvFile){
@@ -116,8 +115,4 @@ async function processFiles(){
  }
 
 
- async function bookmarkletLink(){
-   const bookmarklet_response = await fetch("../bookmarklet/bookmarklet-minified.js");
-   let bookmarklet_text = bookmarklet_response.text();
-   return `javascript:${bookmarklet_text}`
- }
+
