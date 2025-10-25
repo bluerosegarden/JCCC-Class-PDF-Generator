@@ -97,9 +97,7 @@ async function processFiles(){
 
  groupedCheckbox.addEventListener("change", previewFile);
 
-
-
- async function formatTemplate(csvFile){
+< async function formatTemplate(csvFile){
    if(groupedCheckbox.checked){
      const grouped_response = await fetch("../templates/grouped-paper-classes.typ");
      let grouped_text = await grouped_response.text();
@@ -113,6 +111,4 @@ async function processFiles(){
      return ungrouped_text
    }
  }
-
-
 
