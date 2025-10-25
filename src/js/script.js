@@ -118,6 +118,6 @@ async function processFiles(){
 
  async function bookmarkletLink(){
    const bookmarklet_response = await fetch("../bookmarklet/bookmarklet-minified.js");
-   let bookmarklet_text = bookmarklet_response.text();
+   let bookmarklet_text = await bookmarklet_response.text();
    return `javascript:${bookmarklet_text}`
  }
