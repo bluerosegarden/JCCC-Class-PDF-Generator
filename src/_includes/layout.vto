@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@myriaddreamin/typst.ts/dist/esm/contrib/all-in-one-lite.bundle.js"
+    id="typst"></script>
+  <link rel="stylesheet" href="/style.css">
+<script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+</head>
+<nav class="fixed w-full bg-red-100 top-0 flex flex-row gap-2 text-center">
+      <a href="/" class="bg-red-300 p-1 rounded my-2 ml-2 basis-1/16">
+        home
+      </a>
+      <a href="/info" class="bg-red-300 p-1 rounded my-2 basis-1/16">
+        info 
+      </a>
+      <div class="basis-3/4"></div>
+      <a href="https://bluerose.garden/" target="_blank" class="bg-blue-300 p-1 rounded my-2 basis-1/16">
+        main site 
+      </a>
+      <a href="https://github.com/bluerosegarden/JCCC-Class-PDF-Generator" target="_blank" class="bg-blue-300 p-1 rounded my-2 basis-1/16">
+       repo 
+      </a>
+</nav>
+
+<body class="content-center flex px-20 pt-10 flex-col gap-2 w-100% items-center bg-red-50 m-2">
+ 
+    {{content}}
+  </body>
+    <footer class="fixed bottom-0 w-full bg-red-50">
+      <p class="italic text-sm text-center">This website is not affiliated with nor endorsed by Johnson County Community College </p>
+    </footer>
+
+</html>

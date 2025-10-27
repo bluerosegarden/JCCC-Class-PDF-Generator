@@ -97,7 +97,28 @@ async function processFiles(){
 
  groupedCheckbox.addEventListener("change", previewFile);
 
-< async function formatTemplate(csvFile){
+ const bookmarkletLinkElem = document.getElementById("bookmarklet-clipboard");
+
+ bookmarkletLinkElem.addEventListener("click", copyLinkToCLipboard);
+
+ const copiedNotification = document.getElementById("copied-notif");
+
+ async function copyLinkToCLipboard(){
+   bookmarkletLinkElem.setAttribute("icon", "lucide:clipboard-check")
+   const minifiedJSResponse = await fetch("../bookmarklet/bookmarklet-minified.js");
+   let minifiedLink = await minifiedJSResponse.text();
+   navigator.clipboard.writeText(minifiedLink);
+   copiedNotification.classList.add("opacity-100")
+   setTimeout(() => {
+                copiedNotification.classList.
+                    remove('opacity-100');
+            }, 2500);
+   console.log("copied?!")
+ }
+
+
+
+ async function formatTemplate(csvFile){
    if(groupedCheckbox.checked){
      const grouped_response = await fetch("../templates/grouped-paper-classes.typ");
      let grouped_text = await grouped_response.text();
