@@ -2,10 +2,10 @@
 layout: layout.vto
 title: JCCC Class PDF Generator
 ---
-    <div class="fixed top-2 bg-green-300 p-2 rounded transition-opacity duration-300 ease-in-out opacity-0 " id="copied-notif">
+    <div class="fixed top-2 bg-green-500 p-2 rounded transition-opacity duration-300 ease-in-out opacity-0 " id="copied-notif">
       <p>Copied to Clipboard!</p>
     </div>
-    <h1 class="text-purple-400 text-3xl pt-10 pb-15">Blue's JCCC Class List Formatter</h1>
+    <h1 class="text-blue-300 text-4xl pt-10 pb-15 font-bold">Blue's JCCC Class PDF Generator</h1>
     <div class="flex flex-row py-10">
       <a href="{{bookmarklet}}" id="bookmarklet" class="underline text-blue-500 ">Class Grabber Bookmarklet</a>
       <iconify-icon id="bookmarklet-clipboard" class="px-2 align-top cursor-pointer hover:text-red-500 click:text-blue-500" icon="lucide:clipboard-copy" width="26" height="26"></iconify-icon>
@@ -22,8 +22,9 @@ title: JCCC Class PDF Generator
         <ol class="list-decimal">
           <li class="py-1">Either enable your bookmarks bar and drag the above Bookmarklet link into it, copy the link's text manually add it as the url for a new bookmark.</li>
           <li class="py-1">Navigate to the <a target="_blank" href="https://reg-prod.ec.jccc.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search" class="underline text-blue-500">Credit Class Schedule Search<a/> page for JCCC</li>
-          <li class="py-1">Search for classes, and then click on the bookmarklet you just created it will save a CSV file of the page results. <span class="font-bold">Only classes on your current page will be saved.</span> You may need to run it for each page of the search results. </li>
-          <li class="py-1">Once you're done, click the file-upload button below and select as many of the the newly acquired CSV and hit the preview button.</li>
+          <li class="py-1">Search for classes, and then click on the bookmarklet you just created it will save a CSV file of the page results. <span class="font-bold">Only classes displayed on your current page will be saved!</span> You may need to run it for each page of the search results if there are more than 50. </li>
+          <li class="py-1">Once you're done, click the file-upload button below and select as many of the the newly acquired CSV files as you want!</li>
+          <li class="py-1"> Hit the preview button!</li>
           <li class="py-1">Once you're satisfied with the results, hit export to PDF to save it!</li>
         </ol>
         <p class="py-4">If you have any questions, issues, anything please email me at <a href="mailto:mail@bluerose.garden" class="text-blue-500 underline">mail@bluerose.garden</a></p>

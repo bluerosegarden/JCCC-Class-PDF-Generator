@@ -8,7 +8,9 @@ const site = lume({
 
 site.add("/js/script.js")
 
-site.use(tailwindcss(/* Options */));
+site.use(tailwindcss({
+ extensions: [".html", ".jsx"],
+}));
 site.add("/style.css")
 site.add("/templates/paper-classes.typ")
 site.add("/templates/grouped-paper-classes.typ")

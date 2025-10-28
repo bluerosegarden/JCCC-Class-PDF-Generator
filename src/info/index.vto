@@ -3,16 +3,16 @@ layout: layout.vto
 title: Info
 ---
 
-<h1 class="text-purple-400 text-3xl pt-10">Info</h1>
+    <h1 class="text-blue-300 text-4xl pt-10 pb-5 font-bold">Info</h1>
 
 <section class="w-10/12">
 <p class="text-center py-4">Long story short, I got so frustrated with the inability to export a list of classes from the class search that I created my own utility for it. For a while it had to be run manually using a cli, but now I've made an easy to use webapp!</p> 
 
-<p class="pb-2"> If you're concerned about security (good!) and are wary of running random javascript bookmarklets, here's what I have to say:</p>
+<p class="pb-2"> If you're concerned about security (good!) and are wary of running random javascript bookmarklets, here's some info on the project:</p>
 <ol class="list-decimal">
-  <li> You (or someone you trust who knows Javascript) can view the un-minified code <a class="text-blue-500 underline" href="https://github.com/bluerosegarden/JCCC-Class-PDF-Generator/blob/main/src/bookmarklet/bookmarklet-full.js">here</a>. This file is minified automatically when the site is updated (using terser) which you can also see by checking out the <a class="text-blue-500 underline" href="https://github.com/bluerosegarden/JCCC-Class-PDF-Generator/blob/main/deno.json">build script.</a></li>
-  <li>Alternatively, you can copy the bookmarklet's javascript and use a site such as <a class="text-blue-500 underline" href="https://unminify.com/">unminify.com</a> and investigate it yourself. You can also manually minify the full version above yourself!</li>
-  <li>You are also free to write your own parser for the results! Just make sure the headers are the same!</li>
+  <li> You (or someone you trust who knows Javascript) can view the un-minified code <a class="text-blue-500 underline" href="https://github.com/bluerosegarden/JCCC-Class-PDF-Generator/blob/main/src/bookmarklet/bookmarklet-full.js">here!</a> This file is minified automatically when the site is updated (using terser) which you can also see by checking out the deno <a class="text-blue-500 underline" href="https://github.com/bluerosegarden/JCCC-Class-PDF-Generator/blob/main/deno.json">build script.</a></li>
+  <li>Alternatively, you can copy the already minified bookmarklet's javascript and use a site such as <a class="text-blue-500 underline" href="https://unminify.com/">unminify.com</a> and investigate it yourself. You can also manually minify the full version above yourself!</li>
+    <li>You are also free to write your own bookmarklet! It's not too difficult for anyone who has a little Javascript knowledge, just make sure the headers are the same and it should work with my <a href="https://github.com/bluerosegarden/JCCC-Class-PDF-Generator/tree/main/src/templates" class="text-blue-500 underline">typst templates!</a></li>
 </ol>
 
 <p class="text-center pt-4">If you have any other questions or concerns, please email me at <a class="text-blue-500 underline" href="mailto:mail@bluerose.garden">mail@bluerose.garden</a>
