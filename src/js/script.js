@@ -1,9 +1,11 @@
- const input = document.getElementById('input');
- const uploaded_files = document.getElementById("file-input");
- const preview_button = document.getElementById("preview-button");
- const isGrouped = document.getElementById("groupedCheckbox")
- let combined_csv_files = "";
+const input = document.getElementById('input');
+const uploaded_files = document.getElementById("file-input");
+const preview_button = document.getElementById("preview-button");
+const isGrouped = document.getElementById("groupedCheckbox")
+let combined_csv_files = "";
 const contentDiv = document.getElementById('content');
+const bookmarkletLinkElem = document.getElementById("bookmarklet-clipboard");
+const copiedNotification = document.getElementById("copied-notif");
 
 
     // Exports SVG and puts it into the `contentDiv`
@@ -93,16 +95,6 @@ async function processFiles(){
    exportPdf(typ_file)
  }
 
- preview_button.addEventListener("click", previewFile);
-
- groupedCheckbox.addEventListener("change", previewFile);
-
- const bookmarkletLinkElem = document.getElementById("bookmarklet-clipboard");
-
- bookmarkletLinkElem.addEventListener("click", copyLinkToCLipboard);
-
- const copiedNotification = document.getElementById("copied-notif");
-
  async function copyLinkToCLipboard(){
    bookmarkletLinkElem.setAttribute("icon", "lucide:clipboard-check")
    const minifiedJSResponse = await fetch("../bookmarklet/bookmarklet-minified.js");
@@ -115,8 +107,6 @@ async function processFiles(){
             }, 2500);
    console.log("copied?!")
  }
-
-
 
  async function formatTemplate(csvFile){
    if(groupedCheckbox.checked){
@@ -133,3 +123,27 @@ async function processFiles(){
    }
  }
 
+// event listeners
+
+ preview_button.addEventListener("click", previewFile);
+
+ groupedCheckbox.addEventListener("change", previewFile);
+
+ bookmarkletLinkElem.addEventListener("click", copyLinkToCLipboard);
+
+/// Listens the 'load' event to initialize after loaded the bundle file from CDN (jsdelivr).
+document.getElementById('typst').addEventListener('load', function () {
+    /// Initializes the Typst compiler and renderer. Since we use "all-in-one-lite.bundle.js" instead of
+    /// "all-in-one.bundle.js" we need to tell that the wasm module files can be loaded from CDN (jsdelivr).
+    $typst.setCompilerInitOptions({
+        getModule: () =>
+        'https://cdn.jsdelivr.net/npm/@myriaddreamin/typst-ts-web-compiler/pkg/typst_ts_web_compiler_bg.wasm',
+    });
+    $typst.setRendererInitOptions({
+        getModule: () =>
+        'https://cdn.jsdelivr.net/npm/@myriaddreamin/typst-ts-renderer/pkg/typst_ts_renderer_bg.wasm',
+    });
+
+    /// Binds exportPdf action to the button
+    document.getElementById('export').addEventListener("click", processPDF);
+});
