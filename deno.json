@@ -68,5 +68,6 @@
       ]
     }
   },
-  "lock": false
+  "lock": false,
+  "nodeModulesDir": "auto"
 }
