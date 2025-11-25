@@ -8,10 +8,13 @@ const bookmarkletLinkElem = document.getElementById("bookmarklet-clipboard");
 const copiedNotification = document.getElementById("copied-notif");
 
 
-    // Exports SVG and puts it into the `contentDiv`
-    const previewSvg = mainContent => {
-      $typst.svg({ mainContent }).then(svg => {
+//functions
+
+// Exports SVG and puts it into the `contentDiv`
+const previewSvg = mainContent => {
+    $typst.svg({ mainContent }).then(svg => {
         console.log(`rendered! SvgElement { len: ${svg.length} }`);
+
         // append svg text
         contentDiv.innerHTML = svg;
 
