@@ -67,7 +67,8 @@ async function processFiles(){
                 break;
             }
        
-            let file_text = uploadedFile.text()
+            let file_text = await uploadedFile.text()
+            console.log(file_text)
             let split_file = file_text.split("\n");
             split_file.splice(0,1);
             let headerless_file = split_file.join("\n");
@@ -75,6 +76,7 @@ async function processFiles(){
      }
    }
    
+    console.log(csv_text);
    let typ_file = formatTemplate(csv_text);
    combined_csv_files = formatTemplate;
    return typ_file
@@ -94,7 +96,7 @@ async function processFiles(){
    bookmarkletLinkElem.setAttribute("icon", "lucide:clipboard-check")
    const minifiedJSResponse = await fetch("../bookmarklet/bookmarklet-minified.js");
    let minifiedLink = await minifiedJSResponse.text();
-   navigator.clipboard.writeText(minifiedLink);
+     navigator.clipboard.writeText(`javascript:${minifiedLink}`);
    copiedNotification.classList.add("opacity-100")
    setTimeout(() => {
                 copiedNotification.classList.
