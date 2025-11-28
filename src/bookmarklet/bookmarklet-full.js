@@ -5,18 +5,21 @@ if (domainName == "reg-prod.ec.jccc.edu")
 
     async function mainAsync()
     {
-        let versionConfirmation = false;
+    //setting this to true. Probably should fix this to make more sense
+        let versionConfirmation = true;
         let confirmation = false;
         let response = await fetch("https://jccc-class-formatter.bluerose.garden/bookmarklet-ver.json"); 
         let data = await response.json();
+    //Check if data.version exists. If it doesn't, set isOutdated to false and let's pretend. Otherwise set it to the bool of version < data.version
+        let isOutdated = data.version != undefined ? version < data.version : false;
 
         //Checks the version and alerts if there's an update
-        if(data.version != undefined && version < data.version)
+        if(isOutdated)
         {
             versionConfirmation = confirm("BOOKMARKLET IS OUTDATED to ensure proper functionality please update it by copying the new link at https://jccc-class-formatter.bluerose.garden/ \nDo you want to continue to attempt to use the script anyway?")
         }
 
-        if (versionConfirmation)
+        if (!isOutdated || (isOutdated && versionConfirmation))
         {
             confirmation = confirm("Are you sure you selected the max results per page? (should be 50)");
         }
