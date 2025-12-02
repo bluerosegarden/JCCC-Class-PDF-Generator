@@ -1,6 +1,7 @@
 const version = 1.0;
 const domainName = window.location.hostname;
 if (domainName == "reg-prod.ec.jccc.edu") {
+  console.log(`Script version ${version.toFixed(1)}`)
   async function mainAsync() {
     //setting this to true. Probably should fix this to make more sense
     let versionConfirmation = true;
@@ -15,13 +16,13 @@ if (domainName == "reg-prod.ec.jccc.edu") {
     //Checks the version and alerts if there's an update
     if (isOutdated) {
       versionConfirmation = confirm(
-        "BOOKMARKLET IS OUTDATED to ensure proper functionality please update it by copying the new link at https://jccc-class-formatter.bluerose.garden/ \nDo you want to continue to attempt to use the script anyway?",
+        `BOOKMARKLET IS OUTDATED (this is ${version.toFixed(1)} current is ${data.version.toFixed(1)}) to ensure proper functionality please update it by copying the new link at https://jccc-class-formatter.bluerose.garden/ \nDo you want to continue to attempt to use the script anyway?`,
       );
     }
 
     if (!isOutdated || (isOutdated && versionConfirmation)) {
       confirmation = confirm(
-        "Are you sure you selected the max results per page? (should be 50)",
+        `Are you sure you selected the max results per page? (should be 50)\n[script version ${version.toFixed(1)}]`,
       );
     }
 
