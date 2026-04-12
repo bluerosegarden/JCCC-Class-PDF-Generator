@@ -69,7 +69,7 @@ async function processFiles() {
       let file_text = await uploadedFile.text();
       console.log(file_text);
       let split_file = file_text.split("\n");
-      split_file.splice(0, 1);
+      //split_file.splice(0, 1);
       let headerless_file = split_file.join("\n");
       csv_text += headerless_file + "\n";
     }
