@@ -39,8 +39,8 @@ if (domainName == "reg-prod.ec.jccc.edu") {
         /(?<!\bExam\b.*) Start Date: \d\d\/\d\d\/\d\d\d\d End Date: \d\d\/\d\d\/\d\d\d\d(?!=None)/g;
       let emailRE = /(?<="mailto:).*.edu/;
       let profRE = /(.*),(.*)(\(.*\))/;
-      let seatsRE = /(\d{1,})(?: of )(\d{1,})(?: seats )/;
-      let waitlistRE = /(\d{1,})(?: of )(\d{1,})(?: waitlist )/;
+      let seatsRE = /(\d{1,})(?:<\/span> of )(\d{1,})(?: seats )/;
+      let waitlistRE = /(\d{1,})(?:<\/span> of )(\d{1,})(?: waitlist )/;
       var rows = document.getElementsByTagName("tr");
 
       // Get each row's data
