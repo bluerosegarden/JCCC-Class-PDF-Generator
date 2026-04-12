@@ -1,4 +1,4 @@
-const version = 1.1;
+const version = 1.2;
 const domainName = window.location.hostname;
 if (domainName == "reg-prod.ec.jccc.edu") {
   console.log(`Script version ${version.toFixed(1)}`)
@@ -37,7 +37,7 @@ if (domainName == "reg-prod.ec.jccc.edu") {
       let daysRE = /(?<!\bExam\b.*)(Sun|Mon|Tue|Wed|Thu|Fri|Sat)/g;
       let startendRE =
         /(?<!\bExam\b.*) Start Date: \d\d\/\d\d\/\d\d\d\d End Date: \d\d\/\d\d\/\d\d\d\d(?!=None)/g;
-      let emailRE = /(?<="mailto:).*.edu/;
+      let emailRE = /(?<="mailto:)[A-z0-9]*@jccc\.edu/;
       let profRE = /(.*),(.*)(\(.*\))/;
       let seatsRE = /(\d{1,})(?:<\/span> of )(\d{1,})(?: seats )/;
       let waitlistRE = /(\d{1,})(?:<\/span> of )(\d{1,})(?: waitlist )/;
