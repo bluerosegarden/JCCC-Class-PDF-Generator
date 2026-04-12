@@ -1,3 +1,4 @@
+//Only bump this when this bookmarklet is changed!
 const version = 1.2;
 const domainName = window.location.hostname;
 if (domainName == "reg-prod.ec.jccc.edu") {

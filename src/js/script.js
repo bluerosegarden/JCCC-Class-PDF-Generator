@@ -69,7 +69,10 @@ async function processFiles() {
       let file_text = await uploadedFile.text();
       console.log(file_text);
       let split_file = file_text.split("\n");
-      //split_file.splice(0, 1);
+      // removes header only if there's more than one file
+      if (i > 0){
+        split_file.splice(0, 1);
+      }
       let headerless_file = split_file.join("\n");
       csv_text += headerless_file + "\n";
     }
