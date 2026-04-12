@@ -130,8 +130,8 @@ if (domainName == "reg-prod.ec.jccc.edu") {
           } else if (cols[j].dataset.property == "instructionalMethod") {
             classInfo.delivery = cols[j].textContent ? cols[j].textContent : "";
           } else if (cols[j].dataset.property == "status") {
-            let seatsArr = seatsRE.exec(cols[j].title);
-            let waitlistArr = waitlistRE.exec(cols[j].title);
+            let seatsArr = seatsRE.exec(cols[j].innerHTML);
+            let waitlistArr = waitlistRE.exec(cols[j].innerHTML);
             classInfo.seats = `${seatsArr[1]}/${seatsArr[2]}`;
             classInfo.waitlist = waitlistArr
               ? `${waitlistArr[1]}/${waitlistArr[2]}`
