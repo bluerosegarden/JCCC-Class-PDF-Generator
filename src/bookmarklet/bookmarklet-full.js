@@ -1,4 +1,4 @@
-const version = 1.0;
+const version = 1.1;
 const domainName = window.location.hostname;
 if (domainName == "reg-prod.ec.jccc.edu") {
   console.log(`Script version ${version.toFixed(1)}`)
